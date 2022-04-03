@@ -6,7 +6,7 @@ public class Juego{
 
     public static void main(String[] args) {
 
-      Random rand = new Random);
+      Random rand = new Random();
       long seed = rand.nextLong();
       rand.setSeed(seed);
       System.out.println(seed);
