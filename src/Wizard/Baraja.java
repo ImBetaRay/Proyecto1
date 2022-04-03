@@ -4,23 +4,7 @@ import java.util.Random;
 
 public class Baraja {
 
-  private class Carta {
-
-    private String palo;
-    private int numero;
-
-    public Carta(int numero, String palo){
-      this.palo = palo;
-      this.numero = numero;
-    }
-
-    @Override
-    public String toString() {
-      String aux = this.palo + numero + ColorTerminal.RESET;
-      return aux;
-    }
-
-  }
+  
 
   private Lista<Carta> deck;
 
