@@ -1,4 +1,4 @@
-package edd.src.Wizard;
+package edd.src.wizard;
 
 public class Carta {
 
@@ -12,6 +12,14 @@ public class Carta {
 
   @Override
   public String toString() {
+    if (this.numero == 0) {
+      String aux = ColorTerminal.WHITE_BACKGROUND + "Bufon" + ColorTerminal.RESET;
+      return aux;
+    }
+    if (this.numero == 14) {
+      String aux = ColorTerminal.WHITE_BACKGROUND + "Mago" + ColorTerminal.RESET;
+      return aux;
+    }
     String aux = this.palo + numero + ColorTerminal.RESET;
     return aux;
   }

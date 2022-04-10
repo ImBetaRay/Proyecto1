@@ -1,19 +1,18 @@
-package edd.src.Wizard;
+package edd.src.wizard;
 import  edd.src.Estructuras.*;
 import java.util.Random;
 
 public class Baraja {
 
-  
-
-  private Lista<Carta> deck;
+  public Lista<Carta> deck;
 
   public Baraja() {
+    this.deck = new Lista<Carta>();
     reiniciaBaraja();
   }
 
   public void reiniciaBaraja() {
-    deck = new Lista<Carta>();
+    this.deck = new Lista<Carta>();
     for (int i = 0; i <  4; i++) {
       for (int j = 0; j < 15; j++) {
         switch (i) {
@@ -31,14 +30,16 @@ public class Baraja {
   }
 
   public void Shuffle(Random seed){
+    reiniciaBaraja();
     int cantidadCartas = deck.size();
 
     seed.nextInt();
-    for (int i = 0; i < cantidadCartas; i++) {
-        int pos = i + seed.nextInt(cantidadCartas - i);
-        swap(i, pos);
+    for (int m = 0; m < 10; m++){
+      for (int i = 0; i < cantidadCartas; i++) {
+          int pos = i + seed.nextInt(cantidadCartas - i);
+         swap(i, pos);
+      }
     }
-
   }
 
   private void swap(int posInicial,int posFinal){

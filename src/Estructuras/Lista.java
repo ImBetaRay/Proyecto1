@@ -1,6 +1,7 @@
 package edd.src.Estructuras;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
 // iterador
 //next
 
@@ -481,6 +482,25 @@ public class Lista<T> implements Collection<T> {
 
 
     }
+
+    /**
+     * Regresa el elemento en la posición dada.
+     * @return el elemnto t en el indice dado.
+     */
+    public T get(int index){
+        if (index > longi || index < 0) {
+            throw new IndexOutOfBoundsException("No hay elemento en tal indice.");
+        }
+        Nodo aux = this.cabeza;
+        for (int i = 0; i < longi; i++) {
+            if (index == i) {
+                break;
+            }
+            aux = aux.siguiente;
+        }
+        return aux.elemento;
+    }
+    
 
     /**
      * Regresa un iterador para recorrer la lista en una dirección.
