@@ -1,4 +1,4 @@
-package edd.src.wizard;
+package edd.src.Wizard;
 
 public class ColorTerminal {
     // Reset
